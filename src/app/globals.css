@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/*
+ * Lion House brand system. Source of truth: brand/BRAND.md and brand/tokens.json.
+ * If you change a token here, update those files to match.
+ */
+
+@theme {
+  /* Colors */
+  --color-atlantic-blue: #BFCCD0;
+  --color-mist-blue: #DEE8E9;
+  --color-soft-sage: #DEE9B9;
+  --color-cream: #EFEADD;
+  --color-warm-beige: #E8D7C7;
+  --color-ink: #1F2A2D;
+  --color-muted: #6E7A7E;
+  --color-hairline: #C9D1D3;
+
+  /* Typography */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radius — kept tight; brand avoids large rounded corners */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  /* Headings: display font, regular weight, slightly tighter tracking */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  /* Hairline divider */
+  hr {
+    border: 0;
+    border-top: 0.5px solid var(--color-hairline);
+  }
+
+  /* Selection — soft sage to feel intentional */
+  ::selection {
+    background-color: var(--color-soft-sage);
+    color: var(--color-ink);
+  }
+
+  /* Focus ring — atlantic blue, quiet */
+  :focus-visible {
+    outline: 2px solid var(--color-atlantic-blue);
+    outline-offset: 2px;
+  }
+
+  /* Smooth anchor scrollin-page navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Default link styling — minimal, no underline by default */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
