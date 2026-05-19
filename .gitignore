@@ -141,3 +141,23 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Raw photo archive — large masters, not used by the deployed site
+assets/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Generated
+next-env.d.ts
+
+# Certificates
+*.pem
+
+# IDE
+.idea/
+.vscode/
+
+# Vercel
+.vercel
