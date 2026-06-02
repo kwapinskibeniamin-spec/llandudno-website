@@ -23,7 +23,7 @@ export default function InquiryCta() {
           <div className="mt-12">
             <Link
               href="/contact"
-              className="inline-block border-b border-[var(--color-ink)] pb-1 text-base text-[var(--color-ink)] transition-colors hover:border-[var(--color-muted)] hover:text-[var(--color-muted)] md:text-lg"
+              className="inline-block border border-[var(--color-atlantic-blue)] px-8 py-4 text-base text-[var(--color-ink)] transition-colors hover:border-[var(--color-ink)] md:text-lg"
             >
               Send an inquiry →
             </Link>

@@ -113,15 +113,16 @@ llandudno-website/
 
 - [x] 5. Hero section + place hero photo in `public/images/hero/`
 - [x] 6. Identity section (one-paragraph intro)
-- [x] 7. Three featured photos section
+- [~] 7. Featured photos section — REMOVED 2026-06-02 (replaced by AreasOfTheHouse)
 - [x] 8. Two paths section (December / Season)
 - [x] 9. Rooms summary section
-- [x] 10. Gallery teaser section
+- [~] 10. Gallery teaser section — REMOVED 2026-06-02 (replaced by AreasOfTheHouse)
 - [x] 11. Amenities section (prose, three groups)
 - [x] 12. Map + location section (placeholder map for v1)
 - [x] 12.5. SectionNav — floating left-side homepage section navigation
 - [~] 13. Owner story section — SKIPPED for v1, may revisit
 - [x] 14. Inquiry CTA section
+- [x] 14.5. AreasOfTheHouse — three-tab floor browser (replaces Steps 7 + 10)
 
 ### Phase 3 — Other pages (6 steps)
 
@@ -195,6 +196,15 @@ Append entries at the bottom. Format: `YYYY-MM-DD — decision — rationale`.
 - 2026-05-19 — Step 15c editorial photo rhythm (desktop only): 1 photo = full-width; 2 = side-by-side pair; 3 = full + pair; 4 = full + pair + full; 5+ = lead full then alternating pair/full, a trailing odd photo rendered full-width. Mobile is always single full-width photos. v1 ships every category with an empty photos array — each empty section renders one placeholder (`aspect-[4/3]` hairline box, muted italic "Photographs of this area are being prepared.").
 - 2026-05-19 — Step 15c photo curation is the deferred follow-up task: copy + optimise photos from `assets/house-photos/<folder>` into `public/images/gallery-scroll/<category-id>/` with sequential naming (01.jpg, 02.jpg, ...), then populate the `photos` arrays in `galleryScrollData.ts`. The mechanism ships now; curation is separate.
 - 2026-05-19 — Step 15c deviation from brief: the spec said section `id={category.id}`, but `master-suite`, `the-kitchen` and `pool-deck` are already DOM ids in GalleryMobile, and the desktop + mobile scroll components both render in the DOM at once — using the raw slug would produce duplicate ids (invalid HTML, broken `getElementById`/anchor scrolling). Anchor ids are namespaced per component instead: `archive-desktop-<slug>` and `archive-mobile-<slug>`. The `id` field in `galleryScrollData.ts` remains the plain slug for data/keys. SSR-safe: components are client components but render deterministically (first category active); observers run in `useEffect`. Accessibility: real `<a>` links, `<nav aria-label>`, `aria-current` on the active item, semantic `<h3>` headers under the page's `<h2>` archive divider.
+
+- 2026-06-02 — Homepage restructure (Le Collectionist–inspired). Removed FeaturedPhotos (Step 7) and GalleryTeaser (Step 10) sections. Added AreasOfTheHouse: a three-tab interactive section organised by floor — "The main floor" (pool/kitchen/living), "The bedrooms" (master/sea-facing/back), "Set apart" (guest suite/garage/outdoor). Tabs A and B photos link to /gallery; tab C is display-only per owner direction. Sits directly below Identity. Captions are draft copy for owner refinement.
+- 2026-06-02 — InquiryCta CTA restyled from plain underline link to hairline atlantic-blue outline rectangle (border only, no fill) for visibility, per owner request. Still brand-compliant (no filled CTA).
+- 2026-06-02 — SectionNav updated: removed "Featured" and "Gallery" entries, added "Areas". Now 7 items.
+- 2026-06-02 — Orphaned folders public/images/featured/ and public/images/gallery-teaser/ left in place; flagged for cleanup in a later pass.
+- 2026-06-02 — Hero redesigned to full-bleed scroll-over pattern (lecollectionist-inspired). New HeroAerial.tsx: fixed full-screen dimmed aerial (hero-aerial.jpg from 22LeeukoppieRoadAerial-2, ink scrim at 45%), centered "Lion House" + tagline + cream-outline "Send inquiry" CTA + scroll cue. Page content sits on an opaque cream z-10 layer that scrolls over the fixed hero. 100vh spacer (id="villa") reserves the first screen.
+- 2026-06-02 — Old Hero.tsx split and deleted: triptych extracted to Triptych.tsx (section id="featured", preserved verbatim, now wrapped in FadeInOnScroll); title/tagline/aerial absorbed into HeroAerial.
+- 2026-06-02 — Navigation made scroll-aware via transparentOverHero prop (homepage only). Transparent + cream text/whitened logo over the hero; solid cream + ink text + hairline border once scrolled past ~1 viewport. Other pages pass no prop and keep existing solid behavior. Non-breaking.
+- 2026-06-02 — SectionNav: added "Inside" (id="featured") entry for the Triptych section.
 
 ## What "done" means for v1
 
