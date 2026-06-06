@@ -31,15 +31,15 @@ export default function HeroAerial() {
 
       {/* Centered content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-5xl leading-[1.05] text-[var(--color-cream)] md:text-7xl">
+        <h1 className="font-[family-name:var(--font-display)] text-6xl leading-[1.05] text-[var(--color-cream)] md:text-8xl lg:text-9xl">
           Lion House
         </h1>
-        <p className="mt-6 max-w-xl text-base text-[var(--color-cream)] opacity-90 md:text-lg">
+        <p className="mt-8 max-w-xl text-lg text-[var(--color-cream)] opacity-90 md:text-xl">
           A house above the boulders, the beach, the ocean.
         </p>
         <Link
           href="/contact"
-          className="mt-10 inline-block border border-[var(--color-cream)] px-8 py-4 text-sm uppercase tracking-[0.16em] text-[var(--color-cream)] transition-colors hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)] md:text-base"
+          className="mt-10 inline-block border-2 border-[var(--color-cream)] px-10 py-5 text-base uppercase tracking-[0.16em] text-[var(--color-cream)] transition-colors hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)] md:text-lg"
         >
           Send inquiry
         </Link>

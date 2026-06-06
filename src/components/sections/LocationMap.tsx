@@ -14,17 +14,17 @@ export default function LocationMap() {
   return (
     <section
       id="location"
-      className="border-t border-[var(--color-hairline)] px-6 py-24 md:px-10 md:py-32"
+      className="border-t border-[var(--color-hairline)] px-6 py-16 md:px-10 md:py-20"
       aria-label="Where Lion House sits"
     >
       <FadeInOnScroll>
         <div className="mx-auto max-w-6xl">
-          <p className="text-center text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
-            Where it sits
-          </p>
-          <h2 className="mt-6 text-center font-[family-name:var(--font-display)] text-3xl leading-[1.15] md:text-4xl">
-            A protected cove, ten minutes from anywhere.
+          <h2 className="text-center font-[family-name:var(--font-display)] text-4xl leading-[1.1] text-[var(--color-ink)] md:text-5xl">
+            Where It Sits
           </h2>
+          <p className="mt-4 text-center font-[family-name:var(--font-display)] text-lg leading-relaxed text-[var(--color-muted)] md:text-xl">
+            A protected cove, ten minutes from anywhere.
+          </p>
           <p className="mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
             Llandudno is Cape Town's quietest residential beach. There is no through traffic, no shops, no restaurants — the cove is protected on three sides by granite. Camps Bay sits five minutes north along the coast, Hout Bay ten minutes south through the pass.
           </p>

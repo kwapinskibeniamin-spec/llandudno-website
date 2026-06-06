@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#villa", label: "The villa" },
+  { href: "/the-house", label: "The House" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about-llandudno", label: "Llandudno" },
   { href: "/contact", label: "Inquire" },
@@ -56,21 +56,21 @@ export default function Navigation({ transparentOverHero = false }: Props) {
 
   return (
     <header className={headerClass}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
         {/* Logo */}
         <Link href="/" aria-label="Lion House — home" className="flex items-center">
           <Image
             src="/images/logo/lion-house-logo.png"
             alt="Lion House"
-            width={48}
-            height={48}
+            width={80}
+            height={80}
             priority
-            className={`h-10 w-auto transition-[filter] duration-300 ${logoFilter}`}
+            className={`h-14 w-auto transition-[filter] duration-300 md:h-16 ${logoFilter}`}
           />
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden gap-10 text-sm md:flex">
+        <ul className="hidden gap-12 text-base md:flex md:text-lg">
           {links.map((link) => (
             <li key={link.href}>
               <Link

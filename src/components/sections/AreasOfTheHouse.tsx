@@ -16,8 +16,31 @@ type Tab = {
 
 const tabs: Tab[] = [
   {
+    id: "set-apart",
+    label: "Ground floor",
+    blurb: "A self-contained guest suite, the garage, and a private outdoor space at ground level.",
+    clickable: false,
+    photos: [
+      {
+        src: "/images/areas/apart-guest.jpg",
+        alt: "The ground-floor guest suite with its own entrance.",
+        caption: "A private guest suite with its own entrance from the garden.",
+      },
+      {
+        src: "/images/areas/apart-garage.jpg",
+        alt: "The three-car garage with workshop space.",
+        caption: "Three-car garage, with workshop space and room for a golf cart.",
+      },
+      {
+        src: "/images/areas/apart-outdoor.jpg",
+        alt: "The outdoor shower and private garden access for the guest suite.",
+        caption: "An outdoor shower, and direct access to the lawn.",
+      },
+    ],
+  },
+  {
     id: "main-floor",
-    label: "The main floor",
+    label: "Main floor",
     blurb: "Pool, kitchen, lounge — the level where the day unfolds.",
     clickable: true,
     photos: [
@@ -61,29 +84,6 @@ const tabs: Tab[] = [
       },
     ],
   },
-  {
-    id: "set-apart",
-    label: "Set apart",
-    blurb: "A self-contained guest suite at ground level, and the garage below.",
-    clickable: false,
-    photos: [
-      {
-        src: "/images/areas/apart-guest.jpg",
-        alt: "The ground-floor guest suite with its own entrance.",
-        caption: "A private guest suite with its own entrance from the garden.",
-      },
-      {
-        src: "/images/areas/apart-garage.jpg",
-        alt: "The three-car garage with workshop space.",
-        caption: "Three-car garage, with workshop space and room for a golf cart.",
-      },
-      {
-        src: "/images/areas/apart-outdoor.jpg",
-        alt: "The outdoor shower and private garden access for the guest suite.",
-        caption: "An outdoor shower, and direct access to the lawn.",
-      },
-    ],
-  },
 ];
 
 export default function AreasOfTheHouse() {
@@ -93,18 +93,18 @@ export default function AreasOfTheHouse() {
   return (
     <section
       id="areas"
-      className="border-t border-[var(--color-hairline)] px-6 py-24 md:px-10 md:py-32"
+      className="border-t border-[var(--color-hairline)] px-6 py-16 md:px-10 md:py-20"
       aria-label="Around the house"
     >
       <FadeInOnScroll>
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[100rem]">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
-              Around the house
-            </p>
-            <h2 className="mt-6 font-[family-name:var(--font-display)] text-3xl leading-[1.15] md:text-4xl">
-              Three floors, room by room.
+            <h2 className="font-[family-name:var(--font-display)] text-4xl leading-[1.1] text-[var(--color-ink)] md:text-5xl">
+              Around the House
             </h2>
+            <p className="mt-4 font-[family-name:var(--font-display)] text-lg leading-relaxed text-[var(--color-muted)] md:text-xl">
+              Three floors, at a glance.
+            </p>
           </div>
 
           {/* Tabs */}
@@ -158,7 +158,7 @@ export default function AreasOfTheHouse() {
                 <figure>
                   <div
                     className="relative w-full overflow-hidden border border-[var(--color-hairline)]"
-                    style={{ aspectRatio: "3 / 4" }}
+                    style={{ aspectRatio: "3 / 2" }}
                   >
                     <Image
                       src={photo.src}

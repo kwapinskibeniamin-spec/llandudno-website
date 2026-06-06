@@ -28,6 +28,14 @@
 
 @layer base {
   html {
+    /* Global ~10% compaction. Tailwind's font AND spacing scales are rem-based,
+       so shrinking the root font proportionally scales type, padding, margins
+       and gaps everywhere at once — the look the site had at 90% browser zoom,
+       but real sizing (not CSS zoom / transform:scale), so it stays crisp and
+       responsive. vh-based units (the hero) are unaffected and still fill the
+       screen. Any fixed-px sizing was converted to rem or reduced ~10% so it
+       scales with this too. */
+    font-size: 90%;
     background-color: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-body);

@@ -23,17 +23,17 @@ export default function RoomsSummary() {
   return (
     <section
       id="house"
-      className="border-t border-[var(--color-hairline)] px-6 py-24 md:px-10 md:py-32"
+      className="border-t border-[var(--color-hairline)] px-6 py-16 md:px-10 md:py-20"
       aria-label="The house, floor by floor"
     >
       <FadeInOnScroll>
         <div className="mx-auto max-w-4xl">
-          <p className="text-center text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
-            The house
-          </p>
-          <h2 className="mt-6 text-center font-[family-name:var(--font-display)] text-3xl leading-[1.15] md:text-4xl">
-            A house on three floors,<br className="hidden md:inline" /> with the ground given to the guest.
+          <h2 className="text-center font-[family-name:var(--font-display)] text-4xl leading-[1.1] text-[var(--color-ink)] md:text-5xl">
+            The House
           </h2>
+          <p className="mt-4 text-center font-[family-name:var(--font-display)] text-lg leading-relaxed text-[var(--color-muted)] md:text-xl">
+            A house on three floors,<br className="hidden md:inline" /> with the ground given to the guest.
+          </p>
 
           <div className="mt-20 space-y-16 md:space-y-20">
             {floors.map((floor) => (

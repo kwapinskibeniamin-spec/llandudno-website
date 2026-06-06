@@ -27,17 +27,17 @@ export default function TwoPaths() {
   return (
     <section
       id="stays"
-      className="border-t border-[var(--color-hairline)] px-6 py-24 md:px-10 md:py-32"
+      className="border-t border-[var(--color-hairline)] px-6 py-16 md:px-10 md:py-20"
       aria-label="Stays at Lion House"
     >
       <FadeInOnScroll>
-        <div className="mx-auto max-w-6xl">
-          <p className="text-center text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
-            Two ways to stay
-          </p>
-          <h2 className="mt-6 text-center font-[family-name:var(--font-display)] text-3xl leading-[1.15] md:text-4xl">
-            The villa keeps two seasons.
+        <div className="mx-auto max-w-[100rem]">
+          <h2 className="text-center font-[family-name:var(--font-display)] text-4xl leading-[1.1] text-[var(--color-ink)] md:text-5xl">
+            Two Ways to Stay
           </h2>
+          <p className="mt-4 text-center font-[family-name:var(--font-display)] text-lg leading-relaxed text-[var(--color-muted)] md:text-xl">
+            The villa keeps two seasons.
+          </p>
 
           <div className="mt-20 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-10">
             {paths.map((path) => (
@@ -49,7 +49,7 @@ export default function TwoPaths() {
                 >
                   <div
                     className="relative w-full overflow-hidden border border-[var(--color-hairline)]"
-                    style={{ aspectRatio: "4 / 5" }}
+                    style={{ aspectRatio: "3 / 2" }}
                   >
                     <Image
                       src={path.image}
